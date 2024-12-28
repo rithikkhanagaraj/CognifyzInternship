@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color:white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            text-align: center;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .color-button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+            margin-bottom: 20px;
+        }
+        .calculator {
+            margin-top: 20px;
+        }
+        input[type="number"] {
+            padding: 10px;
+            font-size: 16px;
+            margin: 5px;
+            width: 80px;
+        }
+        .add-button {
+            padding: 10px 20px;
+            font-size: 16px;
+            margin-top: 10px;
+            cursor: pointer;
+            background-color: #28a745; /* Green color */
+            color: white;
+            border: none;
+        }
+        .delete-button {
+            padding: 5px 10px;
+            font-size: 14px;
+            cursor: pointer;
+            background-color: #dc3545; /* Red color */
+            color: white;
+            border: none;
+            margin-left: 10px;
+        }
+        #result {
+            margin-top: 20px;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Color Changing Button -->
+        <button class="color-button" onclick="changeColor()">Javascript Program!</button>
+
+        <!-- Basic Calculator -->
+        <div class="calculator">
+            <input type="number" id="num1" placeholder="Number 1">
+            <button class="delete-button" onclick="clearInput('num1')">Delete</button>
+            <br>
+            <input type="number" id="num2" placeholder="Number 2">
+            <button class="delete-button" onclick="clearInput('num2')">Delete</button>
+            <br>
+            <button class="add-button" onclick="addNumbers()">Add</button>
+            <div id="result"></div>
+        </div>
+    </div>
+
+    <script>
+        
+        function changeColor() {
+            const button = document.querySelector('.color-button');
+            button.style.backgroundColor = button.style.backgroundColor === 'blue' ? '#4CAF50' : 'blue';
+        }
+
+    
+        function greetUser() {
+            const hours = new Date().getHours();
+            let greeting;
+
+            if (hours < 12) {
+                greeting = "Good Morning!";
+            } else if (hours < 18) {
+                greeting = "Good Afternoon!";
+            } else {
+                greeting = "Good Evening!";
+            }
+
+            alert(greeting);
+        }
+
+
+        greetUser();
+
+        
+        function addNumbers() {
+            const num1 = parseFloat(document.getElementById('num1').value);
+            const num2 = parseFloat(document.getElementById('num2').value);
+            const sum = num1 + num2;
+
+            document.getElementById('result').textContent = `Result: ${sum}`;
+        }
+
+        
+        function clearInput(inputId) {
+            document.getElementById(inputId).value = '';
+            document.getElementById('result').textContent = '';
+        }
+    </script>
+</body>
+</html>

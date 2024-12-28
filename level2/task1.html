@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Components and Grid Layouts</title>
+    <!-- Bulma CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Custom CSS -->
+    <style>
+        body {
+            font-family:Verdana;
+            background-color: #f7f7f7;
+            margin: 20px;
+        }
+        .card-image{
+            width: 50%;
+            height: 35%;
+        }
+        .container {
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
+        .title {
+            color: #333;
+            margin-bottom: 15px;
+        }
+
+        /* Custom Styles for Bulma Card */
+        .card {
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            overflow: hidden;
+            transition: transform 0.2s ease-in-out;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card .card-image img {
+            border-radius: 10px 10px 0 0;
+        }
+
+        .card-content {
+            padding: 20px;
+        }
+
+        .card .title.is-4 {
+            font-size: 1.5rem;
+            color: aqua; /* Custom color matching your preference */
+        }
+
+        /* Custom Styles for Bootstrap Grid Cards */
+        .card-img-top {
+            border-radius: 10px 10px 0 0;
+            transition: transform 0.2s ease-in-out;
+        }
+
+        .card-img-top:hover {
+            transform: scale(1.05);
+        }
+
+        .card-body {
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 0 0 10px 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .card-title {
+            color: aqua; /* Custom color matching your preference */
+        }
+
+        .card-text {
+            color: #666;
+        }
+
+        /* Additional Responsive Styling */
+        @media (max-width: 768px) {
+            .card {
+                margin-bottom: 20px;
+            }
+        }
+
+        hr {
+            border: 1px solid #ddd;
+            margin-top: 40px;
+            margin-bottom: 40px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Bulma Card Component -->
+    <div class="container">
+        <h2 class="title is-4">Bulma Card Component</h2>
+        <div class="card">
+            <div class="card-image">
+                <figure class="image is-4by3">
+                    <img src="icon-1.gif" alt="Placeholder image">
+                </figure>
+            </div>
+            <div class="card-content">
+                <div class="media">
+                    <div class="media-content">
+                        <p class="title is-4">Person</p>
+                    </div>
+                </div>
+                <div class="content">
+                    Profile Card
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <hr>
+
+    <!-- Bootstrap Grid Layout -->
+    <div class="container">
+        <h2 class="title is-4">Bootstrap Grid Layout</h2>
+        <div class="row">
+            <div class="col-md-4 col-sm-6">
+                <div class="card">
+                    <img src="icon-2.gif" class="card-img-top" alt="Image">
+                    <div class="card-body">
+                        <h5 class="card-title">Person</h5>
+                        <p class="card-text">Profile card</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-6">
+                <div class="card">
+                    <img src="icon-3.gif" class="card-img-top" alt="Image">
+                    <div class="card-body">
+                        <h5 class="card-title">Receiptian</h5>
+                        <p class="card-text">Profile card</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-6">
+                <div class="card">
+                    <img src="icon-4.gif" class="card-img-top" alt="Image">
+                    <div class="card-body">
+                        <h5 class="card-title">Receptionist</h5>
+                        <p class="card-text">Profile card</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
